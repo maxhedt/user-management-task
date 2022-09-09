@@ -1,0 +1,9 @@
+<h1>Delete user?</h1>
+<p>
+  Do you really want to delete
+  <span class="fw-bold">{{data.user.firstName}} {{data.user.lastName}}</span>?
+</p>
+<div mat-dialog-actions class="d-flex justify-content-end">
+  <button mat-flat-button (click)="onAbortClick()">No</button>
+  <button mat-flat-button color="warn" [mat-dialog-close]="true">Delete user</button>
+</div>

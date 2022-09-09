@@ -1,0 +1,42 @@
+<form [formGroup]="userFormGroup">
+  <div class="row">
+
+    <mat-form-field class="col-12 col-sm-6">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field class="col-12 col-sm-6">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field class="col-12 col-sm-6">
+      <mat-label>Choose your birthdate</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate" [min]="minDate" [max]="maxDate">
+      <mat-hint>DD.MM.YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="col-12 col-sm-6">
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option *ngFor="let gender of genders" [value]="gender">{{gender}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="col-12 col-sm-6">
+      <mat-label>Enter your email</mat-label>
+      <input matInput formControlName="email" required>
+      <mat-error *ngIf="userFormGroup.controls.email.invalid">Invalid Email</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-12 col-sm-6">
+      <mat-label>Enter a URL for your picture</mat-label>
+      <input matInput formControlName="image" required>
+      <mat-error *ngIf="userFormGroup.controls.email.invalid">Invalid URL</mat-error>
+    </mat-form-field>
+
+  </div>
+</form>

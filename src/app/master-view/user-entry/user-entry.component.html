@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-8 col-sm-10 overflow-hidden ps-4">
+    <div>{{user.firstName}} {{user.lastName}} ({{user.gender}})</div>
+    <div>{{user.email}}</div>
+    <div>{{user.birthDate | date}}</div>
+  </div>
+  <div class="col-4 col-sm-2 d-flex align-items-center">
+    <button mat-icon-button color="primary" [routerLink]="['/users', user.id]">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>
+
+

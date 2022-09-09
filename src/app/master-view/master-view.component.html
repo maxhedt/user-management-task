@@ -1,0 +1,16 @@
+<div class="row gx-5">
+  <div class="col-5">
+    <div *ngFor="let user of users" [ngClass]="{'selectedUser': isUserSelected(user.id)}">
+      <app-user-entry [user]="user" class="p-2"></app-user-entry>
+      <hr class="m-0">
+    </div>
+  </div>
+  <div class="col-7">
+    <div style="position: sticky; top: 100px">
+      <div class="d-flex justify-content-end mb-4">
+        <button mat-raised-button color="primary" [routerLink]="'/create'">Create User</button>
+      </div>
+      <app-detail-view></app-detail-view>
+    </div>
+  </div>
+</div>

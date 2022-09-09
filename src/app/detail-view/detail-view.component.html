@@ -1,0 +1,31 @@
+<ng-container *ngIf="user">
+  <div class="row">
+    <div class="col-12 col-sm-7">
+      <h2>{{user.firstName}} {{user.lastName}}</h2>
+    </div>
+
+    <div class="col-12 col-sm-5 d-flex justify-content-end">
+      <button mat-icon-button color="secondary" [routerLink]="['/edit', user.id]">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="deleteUser()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-sm-5 col-md-4 col-lg-3">
+      <img class="mb-4" width="100%" [src]="user.image">
+    </div>
+
+    <div class="col-12 col-sm-7 col-md-6 col-lg-9">
+      <h3>User Information</h3>
+      <p>Gender: {{user.gender}}</p>
+      <p>Email: {{user.email}}</p>
+      <p>Date of Birth: {{user.birthDate | date}}</p>
+      <p *ngIf="user.domain">Domain: {{user.domain}}</p>
+      <p *ngIf="user.phone">Phone: {{user.phone}}</p>
+    </div>
+  </div>
+</ng-container>
