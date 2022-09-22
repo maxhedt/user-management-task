@@ -1,5 +1,7 @@
 # FrontendTask
 
+This project was created as a work sample within ~10 hours.
+
 ## Description
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
